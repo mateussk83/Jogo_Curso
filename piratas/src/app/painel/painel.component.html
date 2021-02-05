@@ -1,0 +1,66 @@
+<div class="header">
+    <div class="inner-header flex">
+        <div class="container">
+            <div class="jumbotron">
+                <div class="row">
+                    <div class="row">
+                        <div class="col-sm-6"><br>
+                            <app-progresso [progresso]="progresso"></app-progresso>
+                    </div>
+                        <div class="col-sm-6">
+                            <app-coracao [tentativas]="tentativas"></app-coracao>
+                            <h3>{{minutos}}:{{timeLeft}}</h3>
+                            <div id="pontuacao" class="d-flex justify-content-end" id="pontuacao">
+                                <img [src]="moeda" id="moeda">
+                                <h2>
+                                    <app-contador [pontuacao]="pontuacao"></app-contador>
+                                </h2>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>{{ rodadaPerguntas.pergunta }}</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--Waves Container-->
+    <div>
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+            </g>
+        </svg>
+    </div>
+    <!--Waves end-->
+
+</div>
+<!--Header ends-->
+
+<!--Content starts-->
+<div class="content">
+    <br>
+    <div class="container">
+        <div class="row row-cols-2">
+            <button type="button" class="btn btn-primary" (click)="primeiraAlternativa()">{{rodadaPerguntas.resposta
+                [0]}}</button>
+            <button type="button" value="" class="btn btn-primary"
+                (click)="segundaAlternativa()">{{rodadaPerguntas.resposta [1]}}</button>
+            <button type="button" class="btn btn-primary" (click)="terceiraAlternativa()">{{rodadaPerguntas.resposta
+                [2]}}</button><button   type="button" class="btn btn-primary"
+                (click)="quartaAlternativa()">{{rodadaPerguntas.resposta[3]}}</button>
+                </div>
+                </div>
+            
